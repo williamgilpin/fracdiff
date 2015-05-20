@@ -2,12 +2,16 @@
 
 A set of tools for simulation of fractional Brownian diffusion subject to a harmonic potential and a finite "reaction" zone.
 
+This code was developed and maintained by the Spakowitz Group at Stanford University
+
 ## Dependencies
 
 + Python 3.2 or greater (this code may work with 2.X, but it has not been tested)
 + Standard scientific Python packages: numpy, scipy, matplotlib
 + The notebook files ending in  .ipynb require iPython notebook and its dependencies.
 + PyPDF2 for the use of the optional fig_annotate function
+
+*All of these packages are available on PyPI via 'pip install'*
 
 ## Contents
 
