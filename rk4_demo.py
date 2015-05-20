@@ -6,6 +6,10 @@ This file initializes a set of parameters, runs the integration for a relatively
 William Gilpin, Spakowitz Group at Stanford University, 2015
 '''
 
+from matplotlib.pyplot import *
+from scipy import *
+from numpy import *
+
 ## pick parameter values
 params = dict()
 # width of reactive well
