@@ -1,6 +1,16 @@
 import matplotlib
-matplotlib.use( "agg" )
-import PyPDF2 as pdf
+# matplotlib.use( "agg" )
+
+# attempt to import the PyPDF2 module, if it is not present then 
+# the annotation function just does nothing
+no_pdf_module = False
+try:
+    import PyPDF2 as pdf
+except ImportError:
+    print ("No PyPDF2 installed, figure annotations disabled")
+    no_pdf_module = True
+    pass
+
 
 def fig_annotate(filename, params):
     '''
@@ -14,21 +24,24 @@ def fig_annotate(filename, params):
     
     William Gilpin, 2015
     '''
-    
-    inpdf = pdf.PdfFileReader(filename)
-    
-    mypage = inpdf.getPage(0)
-    outpdf = pdf.PdfFileWriter()
-    outpdf.addPage(mypage)
-    metadata_string = ''
-    for item in params:
-        metadata_string += str(item) + '='+str(params[item])
-        metadata_string += '    '
-    outpdf.addMetadata({'/Keywords': metadata_string})
+
+    if no_pdf_module:
+        pass
+    else:
+        inpdf = pdf.PdfFileReader(filename)
+        
+        mypage = inpdf.getPage(0)
+        outpdf = pdf.PdfFileWriter()
+        outpdf.addPage(mypage)
+        metadata_string = ''
+        for item in params:
+            metadata_string += str(item) + '='+str(params[item])
+            metadata_string += '    '
+        outpdf.addMetadata({'/Keywords': metadata_string})
 
 
-    outputStream = open(filename, 'wb')
-    outpdf.write(outputStream)
+        outputStream = open(filename, 'wb')
+        outpdf.write(outputStream)
     outputStream.close()
     
 def savefig2(filename, params):

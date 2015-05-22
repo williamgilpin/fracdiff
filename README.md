@@ -2,20 +2,20 @@
 
 A set of tools for simulation of fractional Brownian diffusion subject to a harmonic potential and a finite "reaction" zone.
 
-This code was developed and maintained by the Spakowitz Group at Stanford University
+This code is developed and maintained by the Spakowitz Group at Stanford University
 
 ## Dependencies
 
 + Python 3.2 or greater (this code may work with 2.X, but it has not been tested)
 + Standard scientific Python packages: numpy, scipy, matplotlib
 + The notebook files ending in  .ipynb require iPython notebook and its dependencies.
-+ PyPDF2 for the use of the optional fig_annotate function
++ *(Optional)* PyPDF2 for the use of the fig_annotate function
 
 *All of these packages are available on PyPI via 'pip install'*
 
 ## Contents
 
-The main working directory has a main iPython notebook, **frac_integrate.ipynb**, that calls other Python .py files (which must be in the working directory). This code walks through the process of setting up an integrator with parameter values of interest, solving it for hte full distribution $p(r, t)$, and then manipulating this distribution in various ways to generate survival probability curves.
+The main working directory has a main iPython notebook, **frac_integrate.ipynb**, that calls other Python .py files (which must be in the working directory). This code walks through the process of setting up an integrator with parameter values of interest, solving it for the full distribution p(r, t), and then manipulating this distribution in various ways to generate survival probability curves.
 
 The files **fig_annotate.py** and **plt_fmt.py** are non-essential and the code can by stripped of their use if they are causing problems. plt_fmt can be disabled by commenting out the lines at the top of hte iPython ipynb files in shich it gets imported. fig_annotate.py allows simulation parameter values to be saved as metadata in exported PDF figures, and it can be disabled by commenting out any line on which it appears.
 
