@@ -33,3 +33,10 @@ The folder **old_code** has iPython notebooks and pure python libaries associate
 + Analytic solutions of the fractional diffusion equation using the methods of time-dependent perturbation theory. This code computes the perturbation matrix elements for various types of reaction well and guiding potential
 
 + Numerical integration of the fractional diffusion equation using Runge-Kutta with a Crank-Nicolson method, as well as a "split operator" method.
+
+
+## To-do
+
++ The integration doesn't seem to be yielding the correct scaling in the high M (large a or potential diameter) region.
+
++ The re-parametrized form of the diffusion equation really seems to be struggling to allow stable integrations for a wide range of potential well stiffnesses.
